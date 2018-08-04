@@ -1,0 +1,10 @@
+.weather-container {
+  display: inline-block;
+  text-align: left;
+  background-color: #495676; }
+  .weather-container p {
+    font-family: 'Roboto Slab';
+    color: #e48181;
+    font-size: 15px; }
+    .weather-container p span {
+      color: white; }

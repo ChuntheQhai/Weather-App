@@ -1,0 +1,21 @@
+.header-container {
+  background-color: #2e2e2e;
+  padding: 20px;
+}
+.header {
+  padding-top: 10px !important;
+  color: #fff !important;
+  
+  .weather-icon{
+    display: inline-block !important;
+    margin: 0 30px !important;
+    
+    &.sun{
+      color: orange !important;  
+    }
+    &.cloud {
+      color: rgb(0, 111, 167) !important;
+    }
+  }
+  
+}

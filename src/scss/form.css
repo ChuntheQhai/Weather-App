@@ -1,0 +1,5 @@
+.form-container {
+  display: inline-block;
+  margin-top: 20px; }
+  .form-container .input {
+    margin: 20px !important; }
