@@ -5,26 +5,22 @@ class Weather extends Component {
     super(props)
   }
   render() {
-    if(this.props.weatherData){
-      console.log(this.props.weatherData);
+    if(this.props.humidity !== undefined){
+      console.log(this.props);
       return (
         <div className="card-white weather-container">
-          <p>Location : <span>{this.props.weatherData.name}</span></p>
-          <p>Temperature : <span>{this.props.weatherData.main.temp - 273}</span></p>
-          <p>Humidity : <span>{this.props.weatherData.main.humidity}%</span></p>
-          <p>Conditions : <span>{this.props.weatherData.weather.map((element) => element.description + " - ")}</span></p>
+          <p>Location : <span>{this.props.name}</span></p>
+          <p>Temperature : <span>{this.props.temp - 273}</span></p>
+          <p>Humidity : <span>{this.props.humidity}%</span></p>
+          <p>Conditions : <span>{this.props.weather.map((element) => element.description + " ")}</span></p>
         </div> 
       );
     }
     else {
-      return (
-        <div className="card-white weather-container">
-          <p>Location : <span></span></p>
-          <p>Temperature : <span>27</span></p>
-          <p>Humidity : <span>%</span></p>
-          <p>Conditions : <span>Cloud</span></p>
+      return(
+        <div>
         </div>
-      );
+      )
     }
   }
 }

@@ -10,20 +10,34 @@ class FormElements extends Component {
     this.state = {
       city: '',
       country: '',
-      data: undefined
+      err: undefined,
+      name: undefined,
+      temp: undefined,
+      humidity: undefined,
+      weather: [] 
     }
   }
 
   getWeather = async () => {
     if (this.state.city !== '' && this.state.country !== '') {
       const API_KEY = 'a01a9731324022549287423357ba8b68';
-
-      const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&appid=${API_KEY}`);
-      const data = await api_call.json();
-
-      this.setState({
-        data
-      })
+      try {
+        const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city},${this.state.country}&appid=${API_KEY}`);
+        const data = await api_call.json();
+        this.setState({
+          name: data.name,
+          temp: data.main.temp,
+          humidity: data.main.humidity,
+          weather: data.weather
+        })
+      } 
+      catch(err){
+        alert('Input must be a valid city or country');
+        this.setState({
+          err: err.message
+        })
+      }
+      
     }
     else {
       alert('Input should not be empty');
@@ -75,7 +89,11 @@ class FormElements extends Component {
             </Button>
           </Form>
         </div>
-        <Weather weatherData={this.state.data} />
+        <Weather
+          name={this.state.name}
+          humidity={this.state.humidity} 
+          temp={this.state.temp}
+          weather={this.state.weather} />
       </div>
     )
   }
