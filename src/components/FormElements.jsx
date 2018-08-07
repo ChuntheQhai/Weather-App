@@ -58,6 +58,7 @@ class FormElements extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
         <div className="card-white form-container">
