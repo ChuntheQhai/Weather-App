@@ -22,7 +22,7 @@ class FormElements extends Component {
     if (this.state.city !== '' && this.state.country !== '') {
       const API_KEY = 'a01a9731324022549287423357ba8b68';
       try {
-        const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city},${this.state.country}&appid=${API_KEY}`);
+        const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city},${this.state.country}&appid=${API_KEY}&units=metric&lang=tr`);
         const data = await api_call.json();
         this.setState({
           name: data.name,

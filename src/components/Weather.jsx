@@ -10,7 +10,7 @@ class Weather extends Component {
       return (
         <div className="card-white weather-container">
           <p>Location : <span>{this.props.name}</span></p>
-          <p>Temperature : <span>{this.props.temp - 273}</span></p>
+          <p>Temperature : <span>{this.props.temp}</span></p>
           <p>Humidity : <span>{this.props.humidity}%</span></p>
           <p>Conditions : <span>{this.props.weather.map((element) => element.description + " ")}</span></p>
         </div> 
